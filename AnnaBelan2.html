@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="AnnaBelan2.css"/>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="AnnaBelan2.js">
+    </script>
+</head>
+
+<div className="block">
+    <div className="name">Name:тут будет имя<p className="lvl" >Lvl:1 </p></div>
+    <div className="fraction">fraction: тут будет фракция</div>
+    <div className="post">Post<pre className="br">PR 1111/2222</pre></div>
+        <div className="units">Units<p className="unitsinfo">тут дожны быть юниты</p></div>
+    <div className="industry">Industry <span  className="ipr" >IPR: 100/ 200</span></div></div>
+    <div className="building">
+        <div className="hidden building-menu-position topbarmenu" >
+            <form name="name">
+                <label >Build in top bar</label>
+                <br>
+                <select className="topbarbuilding" onChange="getValue_topbar(this.value)" >
+                    <option value="slot_for_building">Slot for build</option>
+                    <option value="Administratum">Administratum</option>
+                    <option value="Manufactorum">Manufactorum</option>
+                    <option value="Supply_depo">Supply depo</option>
+                </select>
+            </form>
+        </div>
+        <div className="hidden building-menu-position leftbarmenu" >
+            <form name="name">
+                <label >Build in left bar</label>
+                <br>
+                <select className="leftbarbuild" onChange="getValue_leftbar(this.value)" >
+                    <option value="slot_for_building">Slot for build</option>
+                    <option value="Administratum">Administratum</option>
+                    <option value="Manufactorum">Manufactorum</option>
+                    <option value="Supply_depo">Supply depo</option>
+
+                </select>
+            </form>
+        </div>
+        <div className="hidden building-menu-position centerbarmenu" >
+            <form name="name">
+                <label >Build in center bar</label>
+                <br>
+                <select className="centerbarbuild" onChange="getValue_centerbar(this.value)" >
+                    <option value="slot_for_building">Slot for build</option>
+                    <option value="Administratum">Administratum</option>
+                    <option value="Manufactorum">Manufactorum</option>
+                    <option value="Supply_depo">Supply depo</option>
+                </select>
+            </form>
+        </div>
+        <div className="hidden building-menu-position rightbarmenu" >
+            <form name="name">
+                <label >Build in rightbar</label>
+                <br>
+                <select className="rightbarbuild" onChange="getValue_rightbar(this.value)" >
+                    <option value="slot_for_building">Slot for build</option>
+                    <option value="Administratum">Administratum</option>
+                    <option value="Manufactorum">Manufactorum</option>
+                    <option value="Supply_depo">Supply depo</option>
+                </select>
+            </form>
+        </div>
+        <div className="hidden building-menu-position bottombarmenu" >
+            <form name="name">
+                <label>Build in botton bar</label>
+                <br>
+                <select className="downbarbuild" onChange="getValue_bottombar(this.value)" >
+                    <option value="slot_for_building">Slot for build</option>
+                    <option value="Administratum">Administratum</option>
+                    <option value="Manufactorum">Manufactorum</option>
+                    <option value="Supply_depo">Supply depo</option>
+                </select>
+            </form>
+        </div>
+            <div className="topbar" onClick="upbarclick(this)" >
+                <img className= "topbarpicture"  src="https://placehold.it/70x70"/>
+            </div>
+
+        <div className="centerbuild">
+            <div className="leftbar"  onClick="leftbarclick(this)">
+                <img className= "leftbarpicture" src="https://placehold.it/70x70"/>
+            </div>
+
+            <div className="centerbar" onClick="centerbarclick(this)" >
+                <img className= "centerbarpicture" src="https://placehold.it/70x70"/>
+            </div>
+
+            <div className="rightbar" onClick="rightbarclick(this)">
+                <img className= "rightbarpicture" src="https://placehold.it/70x70"/>
+            </div>
+
+        </div>
+            <div className="bottombar" onClick="downbarclick(this)">
+                <img className= "bottombarpicture" src="https://placehold.it/70x70"/>
+            </div>
+        </div>
+    <div className="lvlup">
+        <button title="тут должна быть стоимость улучшения" onClick="lvlupclick(this)">lvlup</button>
+    </div>
+</html>
