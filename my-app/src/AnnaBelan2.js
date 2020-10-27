@@ -1,21 +1,15 @@
+    let lvl = 1
+    let IPR = 100
+    let IPRmax = 200
+    let BUILDING_TYPES = {
+        "manufactorum": "manufactorum.jpg",
+        "supply_depo": "supple_depo.jpg",
+        "administratum": "administratum.jpg",
+        "slot_for_building": "slot_for_building.jpg",
+    }
+
 
 export default class ClickEvents {
-
-   constructor() {
-
-       this.lvl = 1
-       this.IPR = 100
-       this.IPRmax = 200
-       this.BUILDING_TYPES = {
-           "manufactorum": "manufactorum.jpg",
-           "supply_depo": "supple_depo.jpg",
-           "administratum": "administratum.jpg",
-           "slot_for_building": "slot_for_buildin.jpg",
-       }
-       return
-   }
-
-
     topbarclick() {
         let hidden = document.querySelector('.topbarmenu');
         hidden.classList.toggle('hidden')
@@ -51,21 +45,21 @@ export default class ClickEvents {
 
 
 
-   static doBeforeChange(imgSrc) {
+    static doBeforeChange(imgSrc) {
         let length = imgSrc.split('/').length;
         imgSrc = imgSrc.split('/')[length - 1];
         switch (imgSrc) {
-            case this.BUILDING_TYPES.administratum:
-                this.IPR -= 100
-                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + this.IPRmax;
+            case BUILDING_TYPES.administratum:
+                IPR -= 100
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + IPRmax;
                 break;
-            case this.BUILDING_TYPES.supply_depo:
-                this.IPR -= 100
-                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + this.IPRmax;
+            case BUILDING_TYPES.supply_depo:
+                IPR -= 100
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + IPRmax;
                 break;
-            case this.BUILDING_TYPES.manufactorum:
-                this.IPRmax -= 100
-                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + Math.round(this.IPRmax);
+            case BUILDING_TYPES.manufactorum:
+                IPRmax -= 100
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + Math.round(IPRmax);
                 break;
             default:
                 break;
@@ -79,23 +73,23 @@ export default class ClickEvents {
         let hidden = document.querySelector('.topbarmenu');
         switch (value) {
             case "Administratum":
-                document.querySelector('.topbarpicture').src = this.BUILDING_TYPES.administratum;
-                this.IPR += 70;
-                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + this.IPRmax;
+                document.querySelector('.topbarpicture').src = BUILDING_TYPES.administratum;
+                IPR += 70;
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + IPRmax;
                 hidden.classList.toggle('hidden');
                 break;
             case "Manufactorum":
-                document.querySelector('.topbarpicture').src = this.BUILDING_TYPES.manufactorum;
+                document.querySelector('.topbarpicture').src = BUILDING_TYPES.manufactorum;
                 hidden.classList.toggle('hidden');
                 break;
             case "Supply_depo":
-                document.querySelector('.topbarpicture').src = this.BUILDING_TYPES.supply_depo;
-                this.IPRmax += 100
-                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + Math.round(this.IPRmax);
+                document.querySelector('.topbarpicture').src = BUILDING_TYPES.supply_depo;
+                IPRmax += 100
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + Math.round(IPRmax);
                 hidden.classList.toggle('hidden');
                 break;
             case "slot_for_building":
-                document.querySelector('.topbarpicture').src = this.BUILDING_TYPES.slot_for_building;
+                document.querySelector('.topbarpicture').src = BUILDING_TYPES.slot_for_building;
                 hidden.classList.toggle('hidden');
                 break;
         }
@@ -108,21 +102,21 @@ export default class ClickEvents {
         let hidden = document.querySelector('.leftbarmenu');
         switch (value) {
             case "Administratum":
-                document.querySelector('.leftbarpicture').src = this.BUILDING_TYPES.administratum;
+                document.querySelector('.leftbarpicture').src = BUILDING_TYPES.administratum;
                 hidden.classList.toggle('hidden');
                 break;
             case "Manufactorum":
-                document.querySelector('.leftbarpicture').src = this.BUILDING_TYPES.manufactorum;
+                document.querySelector('.leftbarpicture').src = BUILDING_TYPES.manufactorum;
                 hidden.classList.toggle('hidden');
                 break;
             case "Supply_depo":
-                this.IPRmax += 100
-                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + Math.round(this.IPRmax);
-                document.querySelector('.leftbarpicture').src = this.BUILDING_TYPES.supply_depo;
+                IPRmax += 100
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + Math.round(IPRmax);
+                document.querySelector('.leftbarpicture').src = BUILDING_TYPES.supply_depo;
                 hidden.classList.toggle('hidden');
                 break;
             case "slot_for_building":
-                document.querySelector('.leftbarpicture').src = this.BUILDING_TYPES.slot_for_building;
+                document.querySelector('.leftbarpicture').src = BUILDING_TYPES.slot_for_building;
                 hidden.classList.toggle('hidden');
                 break;
         }
@@ -137,21 +131,21 @@ export default class ClickEvents {
 
         switch (value) {
             case "Administratum":
-                document.querySelector('.centerbarpicture').src = this.BUILDING_TYPES.administratum;
+                document.querySelector('.centerbarpicture').src = BUILDING_TYPES.administratum;
                 hidden.classList.toggle('hidden');
                 break;
             case "Manufactorum":
-                document.querySelector('.centerbarpicture').src = this.BUILDING_TYPES.manufactorum;
+                document.querySelector('.centerbarpicture').src = BUILDING_TYPES.manufactorum;
                 hidden.classList.toggle('hidden')
                 break;
             case "Supply_depo":
-                this.IPRmax += 100
-                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + Math.round(this.IPRmax);
-                document.querySelector('.centerbarpicture').src = this.BUILDING_TYPES.supply_depo;
+                IPRmax += 100
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + Math.round(IPRmax);
+                document.querySelector('.centerbarpicture').src = BUILDING_TYPES.supply_depo;
                 hidden.classList.toggle('hidden')
                 break;
             case "slot_for_building":
-                document.querySelector('.centerbarpicture').src = this.BUILDING_TYPES.slot_for_building;
+                document.querySelector('.centerbarpicture').src = BUILDING_TYPES.slot_for_building;
                 hidden.classList.toggle('hidden')
                 break;
         }
@@ -165,21 +159,21 @@ export default class ClickEvents {
 
         switch (value) {
             case "Administratum":
-                document.querySelector('.rightbarpicture').src = this.BUILDING_TYPES.administratum;
+                document.querySelector('.rightbarpicture').src = BUILDING_TYPES.administratum;
                 hidden.classList.toggle('hidden')
                 break;
             case "Manufactorum":
-                document.querySelector('.rightbarpicture').src = this.BUILDING_TYPES.manufactorum;
+                document.querySelector('.rightbarpicture').src = BUILDING_TYPES.manufactorum;
                 hidden.classList.toggle('hidden')
                 break;
             case "Supply_depo":
-                this.IPRmax += 100
-                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + Math.round(this.IPRmax);
-                document.querySelector('.rightbarpicture').src = this.BUILDING_TYPES.supply_depo;
+                IPRmax += 100
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + Math.round(IPRmax);
+                document.querySelector('.rightbarpicture').src = BUILDING_TYPES.supply_depo;
                 hidden.classList.toggle('hidden')
                 break;
             case "slot_for_building":
-                document.querySelector('.rightbarpicture').src = this.BUILDING_TYPES.slot_for_building;
+                document.querySelector('.rightbarpicture').src = BUILDING_TYPES.slot_for_building;
                 hidden.classList.toggle('hidden')
                 break;
         }
@@ -187,29 +181,32 @@ export default class ClickEvents {
 
 
 
-   static getValue_bottombar(value) {
-      //  this.doBeforeChange(document.querySelector('.bottombarpicture').src);
-        //let hidden = document.querySelector('.bottombarmenu')
-    debugger
-        switch (value) {
-            case "Administratum":
-                document.querySelector('.bottombarpicture').src = this.BUILDING_TYPES.administratum;
-                //hidden.classList.toggle('hidden')
-                break;
+    static getValue_bottombar(e) { debugger
+        this.doBeforeChange(document.querySelector('.bottombar-image').src);
+        let hidden = document.querySelector('.bottombarmenu')
+        switch (e.target.value) {
+            case 'Administratum':
+                document.querySelector('.bottombar-image').src = BUILDING_TYPES.administratum
+                hidden.classList.toggle('hidden')
+                IPR += 200
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + IPRmax
+            break;
             case "Manufactorum":
-                document.querySelector('.bottombarpicture').src = this.BUILDING_TYPES.manufactorum;
-                //hidden.classList.toggle('hidden')
+                debugger
+                document.querySelector('.bottombar-image').src = BUILDING_TYPES.manufactorum;
+                hidden.classList.toggle('hidden')
                 break;
             case "Supply_depo":
-                this.IPRmax += 100
-                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + Math.round(this.IPRmax);
-                document.querySelector('.bottombarpicture').src = this.BUILDING_TYPES.supply_depo;
-                //hidden.classList.toggle('hidden')
+                IPRmax += 100
+                document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + Math.round(IPRmax);
+                document.querySelector('.bottombar-image').src = BUILDING_TYPES.supply_depo;
+                hidden.classList.toggle('hidden')
                 break;
             case "slot_for_building":
-                document.querySelector('.bottombarpicture').src = this.BUILDING_TYPES.slot_for_building;
-                //hidden.classList.toggle('hidden')
+                document.querySelector('.bottombar-image').src = BUILDING_TYPES.slot_for_building;
+                hidden.classList.toggle('hidden')
                 break;
+            default:
         }
 
     }
@@ -217,10 +214,10 @@ export default class ClickEvents {
 
 
    static lvlupclick() {
-        this.IPR += 50
-        this.IPRmax += 100
-        this.lvl +=1
-        document.querySelector('.lvl').innerHTML = "Lvl:" + Math.round(this.lvl)
-        document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(this.IPR) + "/" + this.IPRmax
+        IPR += 50
+        IPRmax += 100
+        lvl +=1
+        document.querySelector('.lvl').innerHTML = "Lvl:" + Math.round(lvl)
+        document.querySelector('.ipr').innerHTML = "IPR:" + Math.round(IPR) + "/" + IPRmax
     }
 }
